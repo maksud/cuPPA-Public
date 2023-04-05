@@ -1,6 +1,6 @@
-CC := /Developer/NVIDIA/CUDA-8.0/bin/nvcc
+#CC := /Developer/NVIDIA/CUDA-8.0/bin/nvcc
 #CC := /usr/local/cuda/bin/nvcc
-#CC := nvcc
+CC := nvcc
 #CC := g++ # This is the main compiler
 #CC := clang --analyze # and comment out the linker last line for sanity
 SRCDIR := src
@@ -49,7 +49,7 @@ CU_FLAGS := --ptxas-options=-v -gencode arch=compute_61,code=compute_61 -gencode
 #CU_FLAGS := 
 
 LIB := 
-INC := -I include -I/usr/local/cuda/samples/common/inc/ 
+INC := -I include -I cuda-samples/Common// 
 
 $(TARGET): $(OBJECTS)
 	@echo 'Building target: $@'
